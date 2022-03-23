@@ -44,8 +44,15 @@ def main(args):
     return 'done'
 
 
+# Reads to a text file
+def get_pass_list():
+    with open('password-checker.txt', mode='r') as password_list:
+        content = password_list.readlines()
+        pass_list = [x.strip() for x in content]
+        return main(pass_list)
+
 if __name__ == '__main__':
-    sys.exit(main(sys.argv[1:]))  # We will accept any number of arguments
+  get_pass_list()
 
 
 
